@@ -1,0 +1,66 @@
+<style>
+  body,html{
+    background: black;
+  }
+  .test{
+    font-family: monospace;
+    font-size: 24px;
+    color: #00B060;
+  }
+  .button {
+    font-family: monospace;
+    background-color: #00B060;
+    color: white;
+    font-size:30px;
+    text-align:center;
+    line-height:160%;
+    border-radius: 5px;
+  }
+</style>
+<div class="test">
+  Дешифратор ключей для PBW
+</div>
+<div class="test">
+
+</div>
+<div class='button' onclick="cesar()">
+  Достать ключ
+</div>
+<title>дешифратор PBW</title>
+<script>
+function cesar() {
+var ru = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
+var eng = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+let shift = +3
+let msg = prompt("Имя жертвы");
+console.log(msg);
+let total = 'Пароль: '
+let lang = 'ENG' /*prompt("Enter the lang Eng/RU")
+if (lang == 'RU') {
+  for (let i of msg) {
+    let place = ru.indexOf(i);
+    console.log(i, 'place=', place);
+    let new_place = place + shift;
+    console.log(new_place);
+    if (i in ru) {
+      total += ru[new_place]
+    } else {
+      total += 1;
+    }
+  }
+} else */if (lang == 'ENG') {
+  for (let i of msg) {
+    let place = eng.indexOf(i);
+    console.log(i, 'place=', place);
+    let new_place = place + shift;
+    console.log(new_place);
+    if (eng.includes(i)) {
+      total += eng[new_place]
+    } else {
+      total += 1
+    }
+  }
+}
+alert(total) }
+</script>
